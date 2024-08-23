@@ -17,6 +17,8 @@ import logo from '../img/mbtienda.png';
 import '../components/NavbarM.css'//'./Navbar.css'; // Archivo CSS para estilos personalizados
 import imghombre from '../img/imghombre.JPG'; // Asegúrate de que la ruta sea correcta
 
+//REALIZADO POR MANUEL BAQUINZAY 
+
 function NavbarM() {
   /*
   return (
