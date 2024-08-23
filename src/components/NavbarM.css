@@ -116,3 +116,34 @@
     font-size: 0.9rem;
   }
   
+
+  /* css para opc del nav por talles */
+  .dropdown-menu-talles {
+    padding: 20px;
+    width: 500px; /* Ajusta según lo necesites */
+  }
+  
+  .talle-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .talle-grid span {
+    display: inline-block;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .talle-grid span:hover {
+    background-color: #dcdcdc;
+  }
+  
+  .dropdown-menu-talles h6 {
+    margin-bottom: 15px;
+    font-weight: bold;
+  }

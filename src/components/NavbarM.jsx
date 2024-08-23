@@ -19,39 +19,7 @@ import imghombre from '../img/imghombre.JPG'; // Asegúrate de que la ruta sea c
 
 //REALIZADO POR MANUEL BAQUINZAY 
 
-function NavbarM() {
-  /*
-  return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand href="#home">TIENDATECH</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Hombre</Nav.Link>
-            <Nav.Link href="#link">Mujer</Nav.Link>
-            <Nav.Link href="#link">Sobre Nosotros</Nav.Link>
-            <Nav.Link href="#link">Contacto</Nav.Link>
-
-
-            <NavDropdown title="Hombre" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-  */
-
+function NavbarM() { 
   //segundo comentadooo
   return (
     
@@ -159,6 +127,43 @@ function NavbarM() {
             
             <Nav.Link href="/mujer">Mujer</Nav.Link>
             <Nav.Link href="/sobrenosotros">Niños</Nav.Link>
+
+
+
+
+            {/* Nueva opción "Por Talle" */}
+            <NavDropdown title="Por Talle" id="talle-nav-dropdown">
+                          <div className="dropdown-menu-talles">
+                            <div className="row">
+                              <div className="col">
+                                <h6>Hombre</h6>
+                                <div className="talle-grid">
+                                  <span>35</span><span>36</span><span>37</span><span>38</span>
+                                  <span>39</span><span>40</span><span>41</span><span>42</span>
+                                  <span>43</span><span>44</span><span>45</span><span>46</span>
+                                </div>
+                              </div>
+                              <div className="col">
+                                <h6>Mujer</h6>
+                                <div className="talle-grid">
+                                  <span>35</span><span>36</span><span>37</span><span>38</span>
+                                  <span>39</span><span>40</span><span>41</span><span>42</span>
+                                  <span>43</span><span>44</span><span>45</span><span>46</span>
+                                </div>
+                              </div>
+                              <div className="col">
+                                <h6>Niños</h6>
+                                <div className="talle-grid">
+                                  <span>25</span><span>26</span><span>27</span><span>28</span>
+                                  <span>29</span><span>30</span><span>31</span><span>32</span>
+                                  <span>33</span><span>34</span><span>35</span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+            </NavDropdown>
+
+
 
             <Nav.Link href="/contact">Contacto</Nav.Link>
           </Nav>
