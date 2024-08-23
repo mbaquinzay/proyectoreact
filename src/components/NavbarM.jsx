@@ -151,6 +151,7 @@ function NavbarM() {
                                   <span>43</span><span>44</span><span>45</span><span>46</span>
                                 </div>
                               </div>
+                        
                               <div className="col">
                                 <h6>Niños</h6>
                                 <div className="talle-grid">
