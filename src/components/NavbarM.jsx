@@ -16,6 +16,8 @@ import logo from '../img/mbtienda.png';
 
 import '../components/NavbarM.css'//'./Navbar.css'; // Archivo CSS para estilos personalizados
 import imghombre from '../img/imghombre.JPG'; // Asegúrate de que la ruta sea correcta
+import imgmujer from '../img/imgmujer.jpg'; // Asegúrate de que la ruta sea correcta
+
 
 //REALIZADO POR MANUEL BAQUINZAY 
 
@@ -41,7 +43,7 @@ function NavbarM() {
         {/*     <Nav.Link href="/Hombres">Hombre</Nav.Link> */}
 
 
-
+            {/* NAVBAR PARA SECCION DE HOMBRES */}
             <NavDropdown title="Hombre" id="hombre-nav-dropdown">
                   <div className="dropdown-menu-table">
                     <table>
@@ -119,13 +121,101 @@ function NavbarM() {
                       </tbody>
                     </table>
                   </div>
-                </NavDropdown>
-
-
+            </NavDropdown>
 
 
             
-            <Nav.Link href="/mujer">Mujer</Nav.Link>
+{/*             <Nav.Link href="/mujer">Mujerrrrrr</Nav.Link>
+ */}
+
+
+            {/* NAVBAR PARA SECCION DE MUJERESSSS */}
+            <NavDropdown title="Mujer" id="hombre-nav-dropdown">
+                  <div className="dropdown-menu-table">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Zapatillas</th>
+                          <th>Ropa</th>
+                          <th>Accesorios</th>
+                          <th></th> {/* Columna vacía para la imagen */}
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><NavDropdown.Item href="/mujeres/zapatillas/running-training">Running + Training</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/ropa/camperas">Camperas</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/accesorios/bolsos">Bolsos</NavDropdown.Item></td>
+
+
+                          <td rowSpan="5">
+                            <img
+                              src={imgmujer}
+                              alt="Mujer"
+                              style={{ width: '150px', height: 'auto' }}
+                            />
+                          </td> {/* Imagen del hombre */}
+
+
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/mujeres/zapatillas/outdoor">Outdoor</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/ropa/buzos">Buzos</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/accesorios/mochilas">Mochilas</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/mujeres/zapatillas/botines">Botines</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/ropa/chalecos">Chalecos</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/accesorios/botineros">Botineros</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/mujeres/zapatillas/tenis">Tenis</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/ropa/remeras">Remeras</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/accesorios/medias">Medias</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/mujeres/zapatillas/basketball">Basketball</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/ropa/bermudas-shorts">Bermudas y Shorts</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/accesorios/gorras">Gorras</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/mujeres/zapatillas/inspiracion-deportiva">Inspiración Deportiva</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/ropa/shorts-bano">Shorts De Baño</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/accesorios/muñequeras">Muñequeras</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/mujeres/zapatillas/sandalias">Sandalias</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/ropa/pantalones">Pantalones</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/accesorios/riñoneras">Riñoneras</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><NavDropdown.Item href="/mujeres/ropa/conjuntos">Conjuntos</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/mujeres/accesorios/mat-yoga">Mat Yoga</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td><NavDropdown.Item href="/mujeres/accesorios/infladores">Infladores</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td><NavDropdown.Item href="/mujeres/accesorios/pelotas">Pelotas</NavDropdown.Item></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </NavDropdown>
+
+
+
+
+
+
+
+
             <Nav.Link href="/sobrenosotros">Niños</Nav.Link>
 
 
