@@ -17,6 +17,7 @@ import logo from '../img/mbtienda.png';
 import '../components/NavbarM.css'//'./Navbar.css'; // Archivo CSS para estilos personalizados
 import imghombre from '../img/imghombre.JPG'; // Asegúrate de que la ruta sea correcta
 import imgmujer from '../img/imgmujer.jpg'; // Asegúrate de que la ruta sea correcta
+import imgniño from '../img/imgniños.JPG'; // Asegúrate de que la ruta sea correcta
 
 
 //REALIZADO POR MANUEL BAQUINZAY 
@@ -211,13 +212,91 @@ function NavbarM() {
 
 
 
+            {/* NAVBAR PARA SECCION DE NIÑOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */}
+            <NavDropdown title="Niños" id="hombre-nav-dropdown">
+                  <div className="dropdown-menu-table">
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Zapatillas</th>
+                          <th>Ropa</th>
+                          <th>Accesorios</th>
+                          <th></th> {/* Columna vacía para la imagen */}
+
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><NavDropdown.Item href="/ninos/zapatillas/running-training">Running + Training</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/ropa/camperas">Camperas</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/accesorios/bolsos">Bolsos</NavDropdown.Item></td>
+
+
+                          <td rowSpan="5">
+                            <img
+                              src={imgniño}
+                              alt="Ninos"
+                              style={{ width: '150px', height: 'auto' }}
+                            />
+                          </td> {/* Imagen del hombre */}
+
+
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/ninos/zapatillas/outdoor">Outdoor</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/ropa/buzos">Buzos</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/accesorios/mochilas">Mochilas</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/ninos/zapatillas/botines">Botines</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/ropa/chalecos">Chalecos</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/accesorios/botineros">Botineros</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/ninos/zapatillas/tenis">Tenis</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/ropa/remeras">Remeras</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/accesorios/medias">Medias</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/ninos/zapatillas/basketball">Basketball</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/ropa/bermudas-shorts">Bermudas y Shorts</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/accesorios/gorras">Gorras</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/ninos/zapatillas/inspiracion-deportiva">Inspiración Deportiva</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/ropa/shorts-bano">Shorts De Baño</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/accesorios/muñequeras">Muñequeras</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td><NavDropdown.Item href="/ninos/zapatillas/sandalias">Sandalias</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/ropa/pantalones">Pantalones</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/accesorios/riñoneras">Riñoneras</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td><NavDropdown.Item href="/ninos/ropa/conjuntos">Conjuntos</NavDropdown.Item></td>
+                          <td><NavDropdown.Item href="/ninos/accesorios/mat-yoga">Mat Yoga</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td><NavDropdown.Item href="/ninos/accesorios/infladores">Infladores</NavDropdown.Item></td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td></td>
+                          <td><NavDropdown.Item href="/ninos/accesorios/pelotas">Pelotas</NavDropdown.Item></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+            </NavDropdown>
 
 
 
 
-
-            <Nav.Link href="/sobrenosotros">Niños</Nav.Link>
-
+{/*             <Nav.Link href="/sobrenosotros">Niños</Nav.Link>
+ */}
 
 
 
