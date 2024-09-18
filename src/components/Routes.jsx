@@ -5,6 +5,7 @@ import Hombre from '../paginas/Hombre.jsx';
 import Mujer from '../paginas/Mujer.jsx';
 import Contacto from '../paginas/Contacto.jsx';
 import NavbarM from  '../components/NavbarM'//'./NavbarM';
+import Footer from './FooterM.jsx'//'./Footer';
 
 
 function AppRoutes() {
