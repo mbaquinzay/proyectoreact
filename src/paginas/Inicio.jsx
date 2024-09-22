@@ -1,10 +1,11 @@
+
 const Inicio = () => {
     return (
       <div>
 
         <p>
-                Hola bienvenidos, soy manuel 
-        </p>
+{/*                 Hola bienvenidos, soy manuel 
+ */}        </p>
 
       </div>
 

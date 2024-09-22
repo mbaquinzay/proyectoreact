@@ -1,80 +1,134 @@
+//import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-
-import React from 'react'
-
-
-//import Container from 'react-bootstrap/Container';
-//import Nav from 'react-bootstrap/Nav';
-//import Navbar from 'react-bootstrap/Navbar';
-//import NavDropdown from 'react-bootstrap/NavDropdown';
-
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
-
-/*import { Navbar, Nav, Container } from 'react-bootstrap';*/
+import { Navbar, Nav, NavDropdown, Container, Card, Button, Row, Col, Form, InputGroup } from 'react-bootstrap'; // Importa Form y InputGroup para el filtro
+ 
 import { Link } from 'react-router-dom';
 import logo from '../img/mbtienda.png';
+import imghombre from '../img/imghombre.JPG';
+import imgmujer from '../img/imgmujer.jpg';
+import imgniño from '../img/imgniños.JPG';
+import CarouselComponent from './CarouselComponent'; // Asegúrate de importar el carrusel
+import '../components/NavbarM.css';
+import productosData from '../components/Productosj.json';
+import { FaStar, FaStarHalfAlt, FaRegStar, FaSearch } from 'react-icons/fa'; // Para mostrar las estrellas
+import FooterM from './FooterM'; // Importar el componente FooterM
 
-import '../components/NavbarM.css'//'./Navbar.css'; // Archivo CSS para estilos personalizados
-import imghombre from '../img/imghombre.JPG'; // Asegúrate de que la ruta sea correcta
-import imgmujer from '../img/imgmujer.jpg'; // Asegúrate de que la ruta sea correcta
-import imgniño from '../img/imgniños.JPG'; // Asegúrate de que la ruta sea correcta
+
+function NavbarM() {
 
 
-//REALIZADO POR MANUEL BAQUINZAY 
 
-function NavbarM() { 
-  //segundo comentadooo
+
+  const [productosHombre, setProductosHombre] = useState([]);
+  const [productosMujer, setProductosMujer] = useState([]);
+  const [searchTerm, setSearchTerm] = useState(''); // Estado para el filtro
+
+  useEffect(() => {
+      setProductosHombre(productosData.hombres);
+      setProductosMujer(productosData.mujeres);
+  }, []);
+
+  const renderRatingStars = (rating) => {
+      const fullStars = Math.floor(rating);
+      const halfStar = rating - fullStars >= 0.5;
+      const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+      return (
+        <>
+          {[...Array(fullStars)].map((_, index) => (
+            <FaStar key={index} className="text-warning" />
+          ))}
+          {halfStar && <FaStarHalfAlt className="text-warning" />}
+          {[...Array(emptyStars)].map((_, index) => (
+            <FaRegStar key={index} className="text-warning" />
+          ))}
+        </>
+      );
+  };
+
+  const renderProductos = (productos) => {
+      return productos
+          .filter(producto => producto.nombre.toLowerCase().includes(searchTerm.toLowerCase())) // Filtro por nombre
+          .map((producto) => (
+          <Col key={producto.id} sm={12} md={6} lg={4} xl={3} className="mb-4">
+              <Card className="shadow-sm h-100">
+                  <Card.Img
+                      variant="top"
+                      src={producto.imagen}
+                      alt={producto.nombre}
+                      style={{ height: '250px', objectFit: 'cover' }}
+                  />
+                  <Card.Body className="d-flex flex-column">
+                      <Card.Title className="text-center">{producto.nombre}</Card.Title>
+                      <Card.Text className="text-center">
+                          {producto.descripcion}
+                          <br />
+                          <span style={{ color: '#FF5733', fontWeight: 'bold' }}>Precio: ${producto.precio}</span>
+                          <br />
+                          <div className="text-center">{renderRatingStars(producto.rating)}</div>
+                      </Card.Text>
+                      <div className="mt-auto text-center">
+                          <Button variant="primary" className="w-75 mx-auto">
+                              Comprar
+                          </Button>
+                      </div>
+                  </Card.Body>
+              </Card>
+          </Col>
+      ));
+  };
+
+
+
+
+
+
   return (
-    
-    <Navbar expand="lg" bg="light" variant="light">
-      <Container>
-        <Navbar.Brand href="/">
-          <img
-            src={logo} // Reemplaza con la ruta correcta de tu logo
-            height="100"
-            className="d-inline-block align-top"
-            alt="TIENDATECH Logo"
-            
-          />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="/">Inicio</Nav.Link>
-        {/*     <Nav.Link href="/Hombres">Hombre</Nav.Link> */}
+    <>
+      <Navbar expand="lg" bg="light" variant="light">
+        <Container>
+          <Navbar.Brand href="/">
+            <img
+              src={logo}
+              height="100"
+              className="d-inline-block align-top"
+              alt="TIENDATECH Logo"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link href="/">Inicio</Nav.Link>
 
+              {/* NAVBAR PARA SECCION DE HOMBRES */}
+              <NavDropdown title="Hombre" id="hombre-nav-dropdown">
+                <div className="dropdown-menu-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Zapatillas</th>
+                        <th>Ropa</th>
+                        <th>Accesorios</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><NavDropdown.Item href="/hombres/zapatillas/running-training">Running + Training</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="/hombres/ropa/camperas">Camperas</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="/hombres/accesorios/bolsos">Bolsos</NavDropdown.Item></td>
+                        <td rowSpan="5">
+                          <img
+                            src={imghombre}
+                            alt="Hombre"
+                            style={{ width: '150px', height: 'auto' }}
+                          />
+                        </td>
+                      </tr>
+                      {/* Otras filas omitidas por brevedad */}
 
-            {/* NAVBAR PARA SECCION DE HOMBRES */}
-            <NavDropdown title="Hombre" id="hombre-nav-dropdown">
-                  <div className="dropdown-menu-table">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Zapatillas</th>
-                          <th>Ropa</th>
-                          <th>Accesorios</th>
-                          <th></th> {/* Columna vacía para la imagen */}
-
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><NavDropdown.Item href="/hombres/zapatillas/running-training">Running + Training</NavDropdown.Item></td>
-                          <td><NavDropdown.Item href="/hombres/ropa/camperas">Camperas</NavDropdown.Item></td>
-                          <td><NavDropdown.Item href="/hombres/accesorios/bolsos">Bolsos</NavDropdown.Item></td>
-
-
-                          <td rowSpan="5">
-                            <img
-                              src={imghombre}
-                              alt="Hombre"
-                              style={{ width: '150px', height: 'auto' }}
-                            />
-                          </td> {/* Imagen del hombre */}
-
-
-                        </tr>
-                        <tr>
+                      <tr>
                           <td><NavDropdown.Item href="/hombres/zapatillas/outdoor">Outdoor</NavDropdown.Item></td>
                           <td><NavDropdown.Item href="/hombres/ropa/buzos">Buzos</NavDropdown.Item></td>
                           <td><NavDropdown.Item href="/hombres/accesorios/mochilas">Mochilas</NavDropdown.Item></td>
@@ -119,48 +173,42 @@ function NavbarM() {
                           <td></td>
                           <td><NavDropdown.Item href="/hombres/accesorios/pelotas">Pelotas</NavDropdown.Item></td>
                         </tr>
-                      </tbody>
-                    </table>
-                  </div>
-            </NavDropdown>
 
 
-            
-{/*             <Nav.Link href="/mujer">Mujerrrrrr</Nav.Link>
- */}
 
+                    </tbody>
+                  </table>
+                </div>
+              </NavDropdown>
 
-            {/* NAVBAR PARA SECCION DE MUJERESSSS */}
-            <NavDropdown title="Mujer" id="hombre-nav-dropdown">
-                  <div className="dropdown-menu-table">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Zapatillas</th>
-                          <th>Ropa</th>
-                          <th>Accesorios</th>
-                          <th></th> {/* Columna vacía para la imagen */}
+              {/* NAVBAR PARA SECCION DE MUJERES */}
+              <NavDropdown title="Mujer" id="mujer-nav-dropdown">
+                <div className="dropdown-menu-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Zapatillas</th>
+                        <th>Ropa</th>
+                        <th>Accesorios</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><NavDropdown.Item href="/mujeres/zapatillas/running-training">Running + Training</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="/mujeres/ropa/camperas">Camperas</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="/mujeres/accesorios/bolsos">Bolsos</NavDropdown.Item></td>
+                        <td rowSpan="5">
+                          <img
+                            src={imgmujer}
+                            alt="Mujer"
+                            style={{ width: '150px', height: 'auto' }}
+                          />
+                        </td>
+                      </tr>
+                      {/* Otras filas omitidas por brevedad */}
 
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><NavDropdown.Item href="/mujeres/zapatillas/running-training">Running + Training</NavDropdown.Item></td>
-                          <td><NavDropdown.Item href="/mujeres/ropa/camperas">Camperas</NavDropdown.Item></td>
-                          <td><NavDropdown.Item href="/mujeres/accesorios/bolsos">Bolsos</NavDropdown.Item></td>
-
-
-                          <td rowSpan="5">
-                            <img
-                              src={imgmujer}
-                              alt="Mujer"
-                              style={{ width: '150px', height: 'auto' }}
-                            />
-                          </td> {/* Imagen del hombre */}
-
-
-                        </tr>
-                        <tr>
+                      <tr>
                           <td><NavDropdown.Item href="/mujeres/zapatillas/outdoor">Outdoor</NavDropdown.Item></td>
                           <td><NavDropdown.Item href="/mujeres/ropa/buzos">Buzos</NavDropdown.Item></td>
                           <td><NavDropdown.Item href="/mujeres/accesorios/mochilas">Mochilas</NavDropdown.Item></td>
@@ -205,44 +253,43 @@ function NavbarM() {
                           <td></td>
                           <td><NavDropdown.Item href="/mujeres/accesorios/pelotas">Pelotas</NavDropdown.Item></td>
                         </tr>
-                      </tbody>
-                    </table>
-                  </div>
-            </NavDropdown>
 
 
 
-            {/* NAVBAR PARA SECCION DE NIÑOSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */}
-            <NavDropdown title="Niños" id="hombre-nav-dropdown">
-                  <div className="dropdown-menu-table">
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Zapatillas</th>
-                          <th>Ropa</th>
-                          <th>Accesorios</th>
-                          <th></th> {/* Columna vacía para la imagen */}
+                    </tbody>
+                  </table>
+                </div>
+              </NavDropdown>
 
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td><NavDropdown.Item href="/ninos/zapatillas/running-training">Running + Training</NavDropdown.Item></td>
-                          <td><NavDropdown.Item href="/ninos/ropa/camperas">Camperas</NavDropdown.Item></td>
-                          <td><NavDropdown.Item href="/ninos/accesorios/bolsos">Bolsos</NavDropdown.Item></td>
+              {/* NAVBAR PARA SECCION DE NIÑOS */}
+              <NavDropdown title="Niños" id="ninos-nav-dropdown">
+                <div className="dropdown-menu-table">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Zapatillas</th>
+                        <th>Ropa</th>
+                        <th>Accesorios</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><NavDropdown.Item href="/ninos/zapatillas/running-training">Running + Training</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="/ninos/ropa/camperas">Camperas</NavDropdown.Item></td>
+                        <td><NavDropdown.Item href="/ninos/accesorios/bolsos">Bolsos</NavDropdown.Item></td>
+                        <td rowSpan="5">
+                          <img
+                            src={imgniño}
+                            alt="Niños"
+                            style={{ width: '150px', height: 'auto' }}
+                          />
+                        </td>
+                      </tr>
+                      {/* Otras filas omitidas por brevedad */}
 
 
-                          <td rowSpan="5">
-                            <img
-                              src={imgniño}
-                              alt="Ninos"
-                              style={{ width: '150px', height: 'auto' }}
-                            />
-                          </td> {/* Imagen del hombre */}
-
-
-                        </tr>
-                        <tr>
+                      <tr>
                           <td><NavDropdown.Item href="/ninos/zapatillas/outdoor">Outdoor</NavDropdown.Item></td>
                           <td><NavDropdown.Item href="/ninos/ropa/buzos">Buzos</NavDropdown.Item></td>
                           <td><NavDropdown.Item href="/ninos/accesorios/mochilas">Mochilas</NavDropdown.Item></td>
@@ -287,16 +334,15 @@ function NavbarM() {
                           <td></td>
                           <td><NavDropdown.Item href="/ninos/accesorios/pelotas">Pelotas</NavDropdown.Item></td>
                         </tr>
-                      </tbody>
-                    </table>
-                  </div>
-            </NavDropdown>
+
+                    </tbody>
+                  </table>
+                </div>
+              </NavDropdown>
 
 
 
-
-{/*             <Nav.Link href="/sobrenosotros">Niños</Nav.Link>
- */}
+{/* e */}
 
 
 
@@ -342,46 +388,60 @@ function NavbarM() {
             <Nav.Link href="/cart">
               <i className="bi bi-cart"></i> Cart
             </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-);
-  
+{/* fin */}
 
-  /*
-  return (
-    <Navbar expand="lg" bg="light" variant="light">
-      <Container>
-        <Navbar.Brand as={Link} to="/">
-          <img
-            src="app-mrb/public/logo512.png" // Reemplaza con la ruta correcta de tu logo
-            height="40"
-            className="d-inline-block align-top"
-            alt="TIENDATECH Logo"
-          />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/">Inicio</Nav.Link>
-            <Nav.Link as={Link} to="/about">Servicios</Nav.Link>
-            <Nav.Link as={Link} to="/shop">Sobre Nosotros</Nav.Link>
-            <Nav.Link as={Link} to="/contact">Contacto</Nav.Link>
-          </Nav>
-          <Nav>
-            <Nav.Link as={Link} to="/login">Login</Nav.Link>
-            <Nav.Link as={Link} to="/cart">
-              <i className="bi bi-cart"></i> Cart
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );  
-  */
 
+
+
+
+
+
+
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <CarouselComponent /> {/* Agrega el carrusel debajo del navbar */}
+
+
+
+
+            {/* Filtro de búsqueda */}
+            <Container className="mt-4">
+                <Row>
+                    <Col md={12}>
+                        <InputGroup className="mb-3">
+                            <Form.Control
+                                placeholder="Buscar productos por nombre"
+                                aria-label="Buscar productos"
+                                value={searchTerm}
+                                onChange={(e) => setSearchTerm(e.target.value)} // Controla el filtro
+                            />
+                            <Button variant="outline-secondary" onClick={() => setSearchTerm('')}>Limpiar</Button>
+                        </InputGroup>
+                    </Col>
+                </Row>
+            </Container> 
+
+
+
+
+      {/* productos destacados */}
+      <Container className="productos-destacados mt-5">
+        <h2 id="productos-hombre">Productos Destacados - Hombre</h2>
+        <Row>{renderProductos(productosHombre)}</Row>
+
+        <h2 id="productos-mujer" className="mt-5">Productos Destacados - Mujer</h2>
+        <Row>{renderProductos(productosMujer)}</Row>
+      </Container> 
+
+      <FooterM />
+
+
+
+      
+    </>
+  );
 }
 
 export default NavbarM;
-

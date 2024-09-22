@@ -1,0 +1,187 @@
+{
+    "hombres": [
+        {
+            "id": 1,
+            "nombre": "Botas Converse Chuck Taylor",
+            "precio": 12000,
+            "descripcion": "Botas negras de estilo clásico.",
+            "imagen": "/img/ProdDestacados/Hombres/botas-converse-chuck-taylor-all-star-hi-monochrome-negra.jpg",
+            "categoria": "Botas",
+            "rating": 4.5
+        },
+
+        {
+            "id": 2,
+            "nombre": "Mochila Topper Heritage II",
+            "precio": 4500,
+            "descripcion": "Mochila rosa con amplio espacio.",
+            "imagen": "/img/ProdDestacados/Hombres/mochila-topper-heritage-ii-rosa.jpg",
+            "categoria": "Mochilas",
+            "rating": 4.2
+        },
+        {
+            "id": 3,
+            "nombre": "Mochila Topper Street",
+            "precio": 5000,
+            "descripcion": "Mochila azul resistente para uso diario.",
+            "imagen": "/img/ProdDestacados/Hombres/mochila-topper-street-azul.jpg",
+            "categoria": "Mochilas",
+            "rating": 4.8
+        },
+        {
+            "id": 4,
+            "nombre": "Morral Topper Baumm",
+            "precio": 3000,
+            "descripcion": "Morral compacto y ligero.",
+            "imagen": "/img/ProdDestacados/Hombres/morral-topper-baumm.jpg",
+            "categoria": "Morral",
+            "rating": 4
+        },
+        {
+            "id": 5,
+            "nombre": "Riñonera Adidas Adicolor",
+            "precio": 3200,
+            "descripcion": "Riñonera negra de alta calidad.",
+            "imagen": "/img/ProdDestacados/Hombres/ri-onera-adidas-adicolor-negra.jpg",
+            "categoria": "Riñonera",
+            "rating": 4.7
+        },
+        {
+            "id": 6,
+            "nombre": "Riñonera Topper Heritage II",
+            "precio": 2800,
+            "descripcion": "Riñonera beige moderna.",
+            "imagen": "/img/ProdDestacados/Hombres/ri-onera-topper-heritage-ii-beige.jpg",
+            "categoria": "Riñonera",
+            "rating": 4.1
+        },
+        {
+            "id": 7,
+            "nombre": "Zapatilla Adidas Grand Court",
+            "precio": 9500,
+            "descripcion": "Zapatilla blanca cómoda para uso diario.",
+            "imagen": "/img/ProdDestacados/Hombres/zapatilla-adidas-grand-court-blanca.jpg",
+            "categoria": "Zapatilla",
+            "rating": 4.6
+        },
+        {
+            "id": 8,
+            "nombre": "Zapatilla Converse Chuck Taylor",
+            "precio": 10000,
+            "descripcion": "Zapatilla negra clásica.",
+            "imagen": "/img/ProdDestacados/Hombres/zapatilla-converse-chuck-taylor-all-star-core-ox-negra.jpg",
+            "categoria": "Zapatilla",
+            "rating": 4.8
+        },
+        {
+            "id": 9,
+            "nombre": "Zapatilla Converse Chuck Taylor Ox",
+            "precio": 10500,
+            "descripcion": "Zapatilla negra estilo clásico oxford.",
+            "imagen": "/img/ProdDestacados/Hombres/zapatilla-converse-chuck-taylor-all-star-core-ox-negra.jpg",
+            "categoria": "Zapatilla",
+            "rating": 4.5
+        },
+        {
+            "id": 10,
+            "nombre": "Zueco Crocs Crocband",
+            "precio": 6700,
+            "descripcion": "Zueco negro, ideal para relajarse.",
+            "imagen": "/img/ProdDestacados/Hombres/zueco-crocs-crocband-negro.jpg",
+            "categoria": "Zueco",
+            "rating": 4.3
+        }
+    ],
+    "mujeres": [
+        {
+            "id": 1,
+            "nombre": "Campera Adidas Essentials",
+            "precio": 9000,
+            "descripcion": "Campera negra con tres tiras.",
+            "imagen": "/img/ProdDestacados/Mujeres/campera-adidas-essentials-warm-up-3-tiras-mujer-negra.jpg",
+            "categoria": "Campera",
+            "rating": 4.7
+        },
+        {
+            "id": 2,
+            "nombre": "Campera Kappa Logo Wood",
+            "precio": 8000,
+            "descripcion": "Campera celeste con capucha.",
+            "imagen": "/img/ProdDestacados/Mujeres/campera-con-capucha-kappa-logo-wood-mujer-celeste.jpg",
+            "categoria": "Campera",
+            "rating": 4.5
+        },
+        {
+            "id": 3,
+            "nombre": "Campera Puma Bomber Classic",
+            "precio": 8500,
+            "descripcion": "Campera verde estilo bomber.",
+            "imagen": "/img/ProdDestacados/Mujeres/campera-puma-bomber-classic-shiny-mujer-verde.jpg",
+            "categoria": "Campera",
+            "rating": 4.8
+        },
+        {
+            "id": 4,
+            "nombre": "Musculosa Reebok Graphic",
+            "precio": 3500,
+            "descripcion": "Musculosa blanca de diseño gráfico.",
+            "imagen": "/img/ProdDestacados/Mujeres/musculosa-reebok-graphic-mujer-blanca.jpg",
+            "categoria": "Musculosa",
+            "rating": 4.3
+        },
+        {
+            "id": 5,
+            "nombre": "Pantalón Adidas Firebird",
+            "precio": 5000,
+            "descripcion": "Pantalón beige deportivo.",
+            "imagen": "/img/ProdDestacados/Mujeres/pantalon-adidas-firebird-mujer-beige.jpg",
+            "categoria": "Pantalón",
+            "rating": 4.6
+        },
+        {
+            "id": 6,
+            "nombre": "Pantalón Fila Lettering II",
+            "precio": 5200,
+            "descripcion": "Pantalón negro con detalle lettering.",
+            "imagen": "/img/ProdDestacados/Mujeres/pantalon-fila-lettering-ii-mujer-negro.jpg",
+            "categoria": "Pantalón",
+            "rating": 4.4
+        },
+        {
+            "id": 7,
+            "nombre": "Pantalón Puma Play Loud",
+            "precio": 4800,
+            "descripcion": "Pantalón amarillo deportivo.",
+            "imagen": "/img/ProdDestacados/Mujeres/pantalon-puma-play-loud-t7-mujer-amarillo.jpg",
+            "categoria": "Pantalón",
+            "rating": 4.1
+        },
+        {
+            "id": 8,
+            "nombre": "Remera Topper Essentials",
+            "precio": 3000,
+            "descripcion": "Remera gris casual.",
+            "imagen": "/img/ProdDestacados/Mujeres/remera-topper-essentials-mujer-gris.jpg",
+            "categoria": "Remera",
+            "rating": 4.7
+        },
+        {
+            "id": 9,
+            "nombre": "Vestido Adidas Mini 3 Tiras",
+            "precio": 7500,
+            "descripcion": "Vestido negro casual con tiras.",
+            "imagen": "/img/ProdDestacados/Mujeres/vestido-adidas-mini-3-tiras-negro.jpg",
+            "categoria": "Vestido",
+            "rating": 4.6
+        },
+        {
+            "id": 10,
+            "nombre": "Zapatillas Adidas Samba",
+            "precio": 12000,
+            "descripcion": "Zapatillas estilo retro.",
+            "imagen": "/img/ProdDestacados/Mujeres/zapatilas-adidas-zamba-e.jpg",
+            "categoria": "Zapatillas",
+            "rating": 4.9
+        }
+    ]
+}

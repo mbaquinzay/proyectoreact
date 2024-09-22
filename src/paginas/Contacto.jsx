@@ -3,6 +3,7 @@ import conc from '../img/contactos.jpg';
 
 
 const Contato = () => {
+    /*
     return (
         <div>
         <img className='mm'
@@ -14,6 +15,10 @@ const Contato = () => {
         ></img>
 
       </div>    );
+      */
+
+          
+
   };
   
   export default Contato;
