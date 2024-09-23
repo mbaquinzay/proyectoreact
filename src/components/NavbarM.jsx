@@ -381,7 +381,18 @@ function NavbarM() {
 
 
 
-            <Nav.Link href="/contact">Contacto</Nav.Link>
+            {/* <Nav.Link href="/contact">Contacto</Nav.Link> */}
+
+
+{/*               <Nav.Link as={Link} to="/productos">Productos</Nav.Link>
+               <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link> */}
+ 
+
+              <Nav.Link as={Link} to="/productos">Productos</Nav.Link> {/* Link a la nueva ruta de productos */}
+              <Nav.Link as={Link} to="/contacto">Contacto</Nav.Link>
+
+
+
           </Nav>
           <Nav>
             <Nav.Link href="/login">Login</Nav.Link>

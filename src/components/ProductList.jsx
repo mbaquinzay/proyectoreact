@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Card, Button, Row, Col, Container } from 'react-bootstrap'; // Asegúrate de importar estos componentes
 import axios from 'axios';
 import Pagination from './Pagination';
 
@@ -19,34 +20,52 @@ function ProductList() {
     fetchProducts();
   }, []);
 
-  // Paginación
   const indexOfLastProduct = currentPage * productsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
   const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
 
-  // Cambiar de página
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div>
-      <h1>Lista de Productos</h1>
-      {loading ? <h2>Cargando...</h2> : 
-        <div className="product-grid">
-          {currentProducts.map(product => (
-            <div key={product.id}>
-              <img src={product.image} alt={product.title} />
-              <h5>{product.title}</h5>
-              <p>{product.price} USD</p>
-            </div>
+    <Container>
+      <h1 className="text-center mt-4">Lista de Productos</h1>
+      {loading ? (
+        <h2 className="text-center">Cargando...</h2>
+      ) : (
+        <Row className="my-4">
+          {currentProducts.map((product) => (
+            <Col key={product.id} sm={12} md={6} lg={4} xl={3} className="mb-4">
+              <Card className="h-100 shadow-sm">
+                <Card.Img
+                  variant="top"
+                  src={product.image}
+                  alt={product.title}
+                  style={{ height: '250px', objectFit: 'cover' }}
+                />
+                <Card.Body className="d-flex flex-column">
+                  <Card.Title className="text-center">{product.title}</Card.Title>
+                  <Card.Text className="text-center">
+                    <span style={{ fontWeight: 'bold', color: '#FF5733' }}>
+                      ${product.price}
+                    </span>
+                  </Card.Text>
+                  <div className="mt-auto text-center">
+                    <Button variant="primary" className="w-100">
+                      Comprar
+                    </Button>
+                  </div>
+                </Card.Body>
+              </Card>
+            </Col>
           ))}
-        </div>
-      }
+        </Row>
+      )}
       <Pagination 
         productsPerPage={productsPerPage} 
         totalProducts={products.length} 
         paginate={paginate} 
       />
-    </div>
+    </Container>
   );
 }
 
