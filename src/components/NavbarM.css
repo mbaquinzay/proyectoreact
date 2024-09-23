@@ -145,4 +145,7 @@
     height: 200px;
     object-fit: cover;
   }
-  
+
+  .card .card-text {
+    color: #000 !important; /* Asegura que el texto sea negro */
+}
